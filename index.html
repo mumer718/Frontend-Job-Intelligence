@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Market Intelligence System — Modern SaaS Platform</title>
+    <meta name="description"
+        content="A comprehensive job market intelligence system aggregating public listings into searchable job data and real-time market analytics.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#home" class="navbar-brand" id="nav-brand">
+                <div class="brand-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <span class="brand-name">Job Intelligence<span class="brand-dot">.</span></span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+                <a href="#home" class="nav-link active" data-view="home">Home</a>
+                <a href="#jobs" class="nav-link" data-view="jobs">Jobs</a>
+                <a href="#categories" class="nav-link" data-view="categories">Categories</a>
+                <a href="#companies" class="nav-link" data-view="companies">Companies</a>
+                <a href="#analysis" class="nav-link" data-view="analysis">Market Analysis</a>
+                <a href="#about" class="nav-link" data-view="about">About</a>
+                <a href="#contact" class="nav-link" data-view="contact">Contact</a>
+            </nav>
+
+            <!-- Status Indicator & Mobile Toggle -->
+            <div class="nav-right">
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div class="mobile-drawer" id="mobile-drawer">
+            <a href="#home" class="mobile-link active" data-view="home">Home</a>
+            <a href="#jobs" class="mobile-link" data-view="jobs">Jobs</a>
+            <a href="#categories" class="mobile-link" data-view="categories">Categories</a>
+            <a href="#companies" class="mobile-link" data-view="companies">Companies</a>
+            <a href="#analysis" class="mobile-link" data-view="analysis">Market Analysis</a>
+            <a href="#about" class="mobile-link" data-view="about">About</a>
+            <a href="#contact" class="mobile-link" data-view="contact">Contact</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT VIEWS CONTAINER -->
+    <main id="main-content">
+
+        <!-- ================= VIEW 1: HOME / LANDING PAGE ================= -->
+        <section id="view-home" class="view-section active">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-bg-glow hero-bg-glow-1"></div>
+                <div class="hero-bg-glow hero-bg-glow-2"></div>
+                <div class="container hero-container">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Automated Job Market Data &amp; Analytics
+                    </div>
+                    <h1 class="hero-title">Job Market Intelligence System</h1>
+                    <p class="hero-description">
+                        An intelligent analytics platform that collects publicly accessible job listings, normalizes
+                        complex technical data, and transforms job postings into searchable listings and actionable
+                        market insights.
+                    </p>
+
+                    <!-- Quick Hero Search Box -->
+                    <div class="hero-search-wrapper">
+                        <form id="hero-search-form" class="hero-search-bar" onsubmit="return false;">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" id="hero-search-input" class="hero-search-input"
+                                placeholder="Search roles, skills (e.g. Python, Remote, Data)...">
+                            <button type="submit" id="hero-search-submit" class="btn btn-primary btn-search">
+                                Search Jobs
+                            </button>
+                        </form>
+                        <div class="hero-search-suggestions">
+                            <span>Popular searches:</span>
+                            <button type="button" class="hero-tag-btn"
+                                onclick="window.location.hash='#jobs?query=Python'">Python</button>
+                            <button type="button" class="hero-tag-btn"
+                                onclick="window.location.hash='#jobs?workType=Remote'">Remote</button>
+                            <button type="button" class="hero-tag-btn"
+                                onclick="window.location.hash='#jobs?category=Data'">Data</button>
+                            <button type="button" class="hero-tag-btn"
+                                onclick="window.location.hash='#jobs?query=Flask'">Flask</button>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#jobs" class="btn btn-primary btn-lg">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            Explore Jobs Database
+                        </a>
+                        <a href="#analysis" class="btn btn-outline btn-lg">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                            View Market Insights
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards Section -->
+            <div class="section-padding bg-light border-bottom">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <div class="section-tag">Platform Modules</div>
+                        <h2 class="section-title">Core Intelligence Capabilities</h2>
+                        <p class="section-subtitle">Navigate through aggregated listings, category stacks, company
+                            activities, and market trends.</p>
+                    </div>
+
+                    <div class="grid grid-4 feature-grid">
+                        <a href="#categories" class="feature-card">
+                            <div class="feature-icon icon-indigo">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M4 9h16M4 15h16M10 3v18"></path>
+                                </svg>
+                            </div>
+                            <h3 class="feature-title">Job Categories</h3>
+                            <p class="feature-desc">Explore jobs grouped by technology stack and professional domain
+                                specialization.</p>
+                            <div class="feature-link">
+                                <span>Browse Categories</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#jobs" class="feature-card">
+                            <div class="feature-icon icon-blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <h3 class="feature-title">Jobs Database</h3>
+                            <p class="feature-desc">Search and filter available job opportunities across regions and
+                                categories.</p>
+                            <div class="feature-link">
+                                <span>Search Listings</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#companies" class="feature-card">
+                            <div class="feature-icon icon-emerald">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <h3 class="feature-title">Companies</h3>
+                            <p class="feature-desc">Explore hiring organizations, open roles distribution, and technical
+                                preferences.</p>
+                            <div class="feature-link">
+                                <span>Explore Companies</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#analysis" class="feature-card">
+                            <div class="feature-icon icon-purple">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <h3 class="feature-title">Market Insights</h3>
+                            <p class="feature-desc">Understand trends across skills, locations, categories and work
+                                modes.</p>
+                            <div class="feature-link">
+                                <span>View Analytics</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Metrics & Quick Insights Preview -->
+            <div class="section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="section-tag">Market Overview</div>
+                        <h2 class="section-title">Current Aggregated Statistics</h2>
+                        <p class="section-subtitle">Real-time metrics calculated from our active market dataset.</p>
+                    </div>
+
+                    <!-- Metrics Cards Grid -->
+                    <div class="grid grid-4 metric-grid mb-large">
+                        <div class="metric-card">
+                            <div class="metric-icon-wrap icon-blue">💼</div>
+                            <div>
+                                <div class="metric-label">Total Listings Tracked</div>
+                                <div class="metric-value" id="home-stat-jobs">--</div>
+                                <div class="metric-sub">Processed &amp; Sanitized</div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon-wrap icon-emerald">🏢</div>
+                            <div>
+                                <div class="metric-label">Active Companies</div>
+                                <div class="metric-value" id="home-stat-companies">--</div>
+                                <div class="metric-sub">Hiring Entities</div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon-wrap icon-indigo">🏷️</div>
+                            <div>
+                                <div class="metric-label">Technical Categories</div>
+                                <div class="metric-value" id="home-stat-categories">--</div>
+                                <div class="metric-sub">Specializations</div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon-wrap icon-purple">🌍</div>
+                            <div>
+                                <div class="metric-label">Geographic Regions</div>
+                                <div class="metric-value" id="home-stat-countries">--</div>
+                                <div class="metric-sub">Countries Tracked</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Small Market Preview Box -->
+                    <div class="preview-box">
+                        <div class="grid grid-2 gap-large align-center">
+                            <div>
+                                <h3>Work Mode Distribution Preview</h3>
+                                <p class="text-muted fs-sm mb-md">Breakdown of Remote vs. Hybrid vs. On-site job offers
+                                    in current sample data.</p>
+                                <div class="work-mode-bar-container">
+                                    <div class="work-mode-bar">
+                                        <div class="wm-segment wm-remote" id="home-wm-remote-bar" style="width: 45%"
+                                            title="Remote"></div>
+                                        <div class="wm-segment wm-hybrid" id="home-wm-hybrid-bar" style="width: 35%"
+                                            title="Hybrid"></div>
+                                        <div class="wm-segment wm-onsite" id="home-wm-onsite-bar" style="width: 20%"
+                                            title="On-site"></div>
+                                    </div>
+                                    <div class="work-mode-legend">
+                                        <span class="legend-item"><span class="dot dot-remote"></span> Remote (<span
+                                                id="home-wm-remote-pct">45%</span>)</span>
+                                        <span class="legend-item"><span class="dot dot-hybrid"></span> Hybrid (<span
+                                                id="home-wm-hybrid-pct">35%</span>)</span>
+                                        <span class="legend-item"><span class="dot dot-onsite"></span> On-site (<span
+                                                id="home-wm-onsite-pct">20%</span>)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right-desktop">
+                                <h3>In-Depth Analytics</h3>
+                                <p class="text-muted fs-sm mb-md">Explore detailed analytics on salary ranges, top
+                                    required skills, and weekly volume trends.</p>
+                                <a href="#analysis" class="btn btn-primary">
+                                    View Full Market Analysis &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= VIEW 2: JOBS PAGE ================= -->
+        <section id="view-jobs" class="view-section">
+            <div class="container section-padding">
+                <div class="page-header">
+                    <h1 class="page-title">Jobs Database</h1>
+                    <p class="page-subtitle">Search and filter active job listings aggregated across technical job
+                        sources.</p>
+                </div>
+
+                <!-- Quick Preset Filter Tabs (SaaS Style) -->
+                <div class="quick-filter-tabs mb-md">
+                    <button type="button" class="quick-tab active"
+                        onclick="JobsViewController.applyQuickPreset('all')">All Listings</button>
+                    <button type="button" class="quick-tab" onclick="JobsViewController.applyQuickPreset('remote')">🌐
+                        Remote Only</button>
+                    <button type="button" class="quick-tab" onclick="JobsViewController.applyQuickPreset('python')">🐍
+                        Python Stack</button>
+                    <button type="button" class="quick-tab" onclick="JobsViewController.applyQuickPreset('data')">📊
+                        Data &amp; Analytics</button>
+                    <button type="button" class="quick-tab"
+                        onclick="JobsViewController.applyQuickPreset('high-salary')">💰 High Salary</button>
+                </div>
+
+                <!-- Search and Filter Panel -->
+                <div class="filter-panel">
+                    <!-- Search Input -->
+                    <div class="search-box">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="jobs-search-input" class="form-control search-input"
+                            placeholder="Search jobs, skills, companies (e.g. Python, Remote, Flask)...">
+                        <button type="button" id="jobs-search-clear" class="search-clear-btn"
+                            style="display: none;">&times;</button>
+                    </div>
+
+                    <!-- Dropdown Filter Controls -->
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="filter-country" class="filter-label">Country</label>
+                            <select id="filter-country" class="form-select">
+                                <option value="">All Countries</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Germany">Germany</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="Remote">Global / Remote</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-work-type" class="filter-label">Work Type</label>
+                            <select id="filter-work-type" class="form-select">
+                                <option value="">All Work Types</option>
+                                <option value="Remote">Remote</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="On-site">On-site</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-category" class="filter-label">Category</label>
+                            <select id="filter-category" class="form-select">
+                                <option value="">All Categories</option>
+                                <option value="Python">Python</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Data">Data &amp; Analytics</option>
+                                <option value="AI / ML">AI / ML</option>
+                                <option value="Backend">Backend</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="DevOps">DevOps</option>
+                                <option value="Java">Java</option>
+                                <option value=".NET">.NET</option>
+                                <option value="Web Development">Web Development</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-sort" class="filter-label">Sort By</label>
+                            <select id="filter-sort" class="form-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="salary-high">Salary: High to Low</option>
+                                <option value="salary-low">Salary: Low to High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Active Filter Chips Bar -->
+                    <div id="active-chips-bar" class="active-chips-bar" style="display: none;">
+                        <span class="chips-label">Active Filters:</span>
+                        <div id="chips-container" class="chips-container"></div>
+                        <button type="button" id="btn-clear-all-filters" class="btn-clear-chips">Clear All</button>
+                    </div>
+                </div>
+
+                <!-- Results Header (Count + Summary) -->
+                <div class="results-header">
+                    <div id="jobs-count-display" class="results-count">
+                        Showing <strong>0</strong> jobs
+                    </div>
+                    <div class="results-layout-toggle">
+                        <span class="fs-sm text-muted">View:</span>
+                        <span class="badge badge-primary">Grid Cards</span>
+                    </div>
+                </div>
+
+                <!-- Job Listings Container -->
+                <div id="jobs-list-container" class="jobs-grid">
+                    <!-- Dynamic Job Cards will render here -->
+                </div>
+
+                <!-- Empty State (No Matches) -->
+                <div id="jobs-empty-state" class="empty-state" style="display: none;">
+                    <div class="empty-icon">🔍</div>
+                    <h3>No jobs match your current filters</h3>
+                    <p>Try searching with a different keyword or clear your active filters.</p>
+                    <button type="button" id="btn-empty-clear-filters" class="btn btn-primary btn-sm">Clear
+                        Filters</button>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div id="jobs-pagination" class="pagination-container" style="display: none;">
+                    <button type="button" id="btn-page-prev" class="btn-page">&laquo; Previous</button>
+                    <div id="pagination-numbers" class="pagination-numbers"></div>
+                    <button type="button" id="btn-page-next" class="btn-page">Next &raquo;</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= VIEW 3: JOB DETAILS PAGE ================= -->
+        <section id="view-job-detail" class="view-section">
+            <div class="container section-padding">
+                <!-- Back Button -->
+                <div class="mb-md">
+                    <a href="#jobs" class="btn-back">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        Back to Jobs
+                    </a>
+                </div>
+
+                <!-- Job Details Header Card -->
+                <div class="job-detail-card" id="job-detail-content">
+                    <div class="loading-spinner">Loading job details...</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= VIEW 4: CATEGORIES PAGE ================= -->
+        <section id="view-categories" class="view-section">
+            <div class="container section-padding">
+                <div class="page-header">
+                    <h1 class="page-title">Job Categories</h1>
+                    <p class="page-subtitle">Explore opportunities grouped by programming language, framework, and
+                        domain specialization.</p>
+                </div>
+
+                <div id="categories-grid" class="grid grid-3 gap-large">
+                    <!-- Categories will be dynamically rendered -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= VIEW 5: COMPANIES PAGE ================= -->
+        <section id="view-companies" class="view-section">
+            <div class="container section-padding">
+                <div class="page-header">
+                    <h1 class="page-title">Companies Intelligence</h1>
+                    <p class="page-subtitle">Market activity, category focus, and work mode breakdown across hiring
+                        organizations.</p>
+                </div>
+
+                <div id="companies-grid" class="grid grid-3 gap-large">
+                    <!-- Companies cards rendered dynamically -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= VIEW 6: MARKET ANALYSIS PAGE ================= -->
+        <section id="view-analysis" class="view-section">
+            <div class="container section-padding">
+                <div class="page-header flex-between align-center">
+                    <div>
+                        <h1 class="page-title">Market Analysis &amp; Analytics</h1>
+                        <p class="page-subtitle">Aggregated labor market intelligence, skill frequencies, salary
+                            metrics, and trends.</p>
+                    </div>
+                    <!-- Analytics Region Filter Dropdown (Interactive SaaS Feature) -->
+                    <div class="analytics-filter-select">
+                        <label for="ana-region-filter" class="fs-sm text-muted fw-bold">Region Filter:</label>
+                        <select id="ana-region-filter" class="form-select form-select-sm"
+                            onchange="MarketAnalysisViewController.handleRegionChange(this.value)">
+                            <option value="all">Global (All Regions)</option>
+                            <option value="Pakistan">Pakistan Only</option>
+                            <option value="Remote">Remote Only</option>
+                            <option value="United States">United States</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Key Analytical Metric Summary Strip -->
+                <div class="grid grid-4 metric-grid mb-large">
+                    <div class="metric-card">
+                        <div class="metric-label">Top Language</div>
+                        <div class="metric-value text-blue" id="ana-top-lang">Python</div>
+                        <div class="metric-sub">Highest Demand Stack</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Remote Share</div>
+                        <div class="metric-value text-emerald" id="ana-remote-share">45%</div>
+                        <div class="metric-sub">Work From Anywhere</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Avg Listed Salary</div>
+                        <div class="metric-value text-purple" id="ana-avg-salary">$115k</div>
+                        <div class="metric-sub">Based on reported bounds</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Top Skills Tracked</div>
+                        <div class="metric-value text-amber" id="ana-skills-count">35+</div>
+                        <div class="metric-sub">Extracted by Pipelines</div>
+                    </div>
+                </div>
+
+                <!-- Analysis Charts & Dashboard Widgets Grid -->
+                <div class="grid grid-2 gap-large mb-large">
+                    <!-- Widget 1: Jobs by Programming Language -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">1. Jobs by Programming Language</h3>
+                            <span class="chart-badge">Volume Breakdown</span>
+                        </div>
+                        <div id="chart-languages" class="bar-chart-container">
+                            <!-- Dynamic SVG/HTML bar chart rendered here -->
+                        </div>
+                    </div>
+
+                    <!-- Widget 2: Jobs by Country -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">2. Geographic Distribution (Countries)</h3>
+                            <span class="chart-badge">Region Shares</span>
+                        </div>
+                        <div id="chart-countries" class="bar-chart-container">
+                            <!-- Dynamic SVG/HTML bar chart rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-2 gap-large mb-large">
+                    <!-- Widget 3: Remote vs Hybrid vs On-site -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">3. Work Mode Breakdown</h3>
+                            <span class="chart-badge">Remote / Hybrid / Onsite</span>
+                        </div>
+                        <div class="work-mode-analytics-body">
+                            <div id="chart-workmode-bars" class="mb-md"></div>
+                            <div class="wm-details-grid" id="chart-workmode-details"></div>
+                        </div>
+                    </div>
+
+                    <!-- Widget 4: Jobs by Category -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">4. Job Volume by Technical Category</h3>
+                            <span class="chart-badge">Domain Share</span>
+                        </div>
+                        <div id="chart-categories" class="bar-chart-container">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-2 gap-large mb-large">
+                    <!-- Widget 5: Most Wanted Skills -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">5. Most Wanted Skills &amp; Frameworks</h3>
+                            <span class="chart-badge">Extracted Tags</span>
+                        </div>
+                        <div id="chart-skills" class="skills-cloud-container">
+                            <!-- Skill frequency badges rendered dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Widget 6: Jobs Over Time Trend -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">6. Postings Trend Over Time</h3>
+                            <span class="chart-badge">Weekly Aggregate</span>
+                        </div>
+                        <div id="chart-time-trend" class="time-chart-container">
+                            <!-- Line trend chart SVG rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Widget 7: Salary Statistics -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">7. Salary Statistics &amp; Insights</h3>
+                        <span class="chart-badge">Normalized Range Analytics</span>
+                    </div>
+                    <div class="salary-stats-container" id="salary-stats-content">
+                        <!-- Dynamic Salary Cards & Empty State notice rendered here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= VIEW 7: ABOUT PAGE ================= -->
+        <section id="view-about" class="view-section">
+            <div class="container section-padding">
+                <div class="page-header text-center max-w-700 mx-auto">
+                    <h1 class="page-title">About Job Market Intelligence</h1>
+                    <p class="page-subtitle">A portfolio and learning platform demonstrating full-stack data pipeline
+                        architecture.</p>
+                </div>
+
+                <div class="about-content-grid max-w-900 mx-auto">
+                    <div class="about-card mb-large">
+                        <h2>System Purpose &amp; Problem Solved</h2>
+                        <p class="leading-relaxed text-muted">
+                            Public job boards contain vast quantities of valuable hiring signal, but listings are
+                            fragmented, unstructured, and often lack standard technology categorization. The <strong>Job
+                                Market Intelligence System</strong> was developed to aggregate publicly accessible job
+                            listings, clean raw descriptions into structured schemas, and provide meaningful analytics
+                            on tech stack demand.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <h2>Data Honesty &amp; Attribution Notice</h2>
+                        <p class="leading-relaxed text-muted">
+                            This application aggregates publicly available listings from external job boards and career
+                            pages for learning and analytical demonstration purposes. It does not claim ownership of
+                            listed job vacancies. Each job listing page includes direct source attribution and links to
+                            the original source.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= VIEW 8: CONTACT PAGE ================= -->
+        <section id="view-contact" class="view-section">
+            <div class="container section-padding">
+                <div class="page-header text-center max-w-600 mx-auto">
+                    <h1 class="page-title">Contact &amp; Feedback</h1>
+                    <p class="page-subtitle">Have questions or feedback regarding the Job Market Intelligence System?
+                    </p>
+                </div>
+
+                <div class="contact-card max-w-600 mx-auto">
+                    <form id="contact-form" novalidate>
+                        <!-- Form Success Banner -->
+                        <div id="contact-success" class="alert alert-success" style="display: none;">
+                            <strong>Message Sent Successfully!</strong><br>
+                            Thank you for your message. This form is running in frontend preview mode. In the production
+                            deployment, your inquiry will be routed to the backend administrator.
+                        </div>
+
+                        <div class="form-group mb-md">
+                            <label for="contact-name" class="form-label">Full Name <span
+                                    class="required">*</span></label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="Enter your full name"
+                                required>
+                            <div class="form-error" id="err-contact-name">Please enter your name.</div>
+                        </div>
+
+                        <div class="form-group mb-md">
+                            <label for="contact-email" class="form-label">Email Address <span
+                                    class="required">*</span></label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="name@example.com"
+                                required>
+                            <div class="form-error" id="err-contact-email">Please enter a valid email address.</div>
+                        </div>
+
+                        <div class="form-group mb-md">
+                            <label for="contact-subject" class="form-label">Subject <span
+                                    class="required">*</span></label>
+                            <input type="text" id="contact-subject" class="form-control"
+                                placeholder="e.g. Question about API or dataset" required>
+                            <div class="form-error" id="err-contact-subject">Please enter a subject.</div>
+                        </div>
+
+                        <div class="form-group mb-large">
+                            <label for="contact-message" class="form-label">Message <span
+                                    class="required">*</span></label>
+                            <textarea id="contact-message" class="form-control textarea" rows="5"
+                                placeholder="Write your message here..." required></textarea>
+                            <div class="form-error" id="err-contact-message">Please enter your message.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand-col">
+                <a href="#home" class="footer-brand">
+                    <div class="brand-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span>Job Intelligence<span class="brand-dot">.</span></span>
+                </a>
+                <p class="footer-desc">
+                    Aggregating public job market data into queryable APIs and real-time tech market analytics.
+                </p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4 class="footer-heading">Platform Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#jobs">Jobs Database</a></li>
+                    <li><a href="#categories">Job Categories</a></li>
+                    <li><a href="#companies">Companies Intelligence</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4 class="footer-heading">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#analysis">Market Analysis</a></li>
+                    <li><a href="#about">About Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; Job Market Intelligence System.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
